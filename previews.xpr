@@ -10,12 +10,12 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>fr.it.vedph.comments/</String>
+                                    <String>fr.it.vedph.comment/</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
                                         <String>fr.it.vedph.apparatus</String>
-                                        <String>fr.it.vedph.comments</String>
+                                        <String>fr.it.vedph.comment</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -37,7 +37,7 @@
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>fr.it.vedph.comments</String>
+                                        <String>fr.it.vedph.comment</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -144,7 +144,7 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String>fr.it.vedph.comments</String>
+                                    <String>fr.it.vedph.comment</String>
                                 </field>
                                 <field name="baseURL">
                                     <String></String>
@@ -162,10 +162,10 @@
                                     <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String>${pdu}/fr.it.vedph.comments/go.xsl</String>
+                                    <String>${pdu}/fr.it.vedph.comment/go.xsl</String>
                                 </field>
                                 <field name="inputXMLURL">
-                                    <String>${pdu}/fr.it.vedph.comments/sample.xml</String>
+                                    <String>${pdu}/fr.it.vedph.comment/sample.xml</String>
                                 </field>
                                 <field name="defaultScenario">
                                     <Boolean>false</Boolean>
@@ -183,7 +183,7 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputResource">
-                                    <String>${pd}/fr.it.vedph.comments/sample.html</String>
+                                    <String>${pd}/fr.it.vedph.comment/sample.html</String>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
