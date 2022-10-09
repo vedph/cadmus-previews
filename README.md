@@ -110,3 +110,5 @@ To create a preview:
   ]
 }
 ```
+
+>To minify your XSLT you can use any tool like [this web minifier](https://codebeautify.org/xml-minifier). Please ensure to properly escape the XSLT code when placing it in the JSON configuration: any `"` should be escaped as `\"`.
