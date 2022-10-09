@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <location>9.1</location>
+    <tag>general</tag>
+    <text>The Chicxulub crater is an impact crater buried underneath the Mexican Yucatán Peninsula,
+        with its center located offshore, near the town of Chicxulub. The crater is about 180
+        kilometers (110 mi) in diameter, making it one of the largest confirmed impact structures in
+        the world; the asteroid whose impact (animation shown) formed the crater was at least 10 km
+        (6 mi) in diameter. Discovered by geophysicists looking for petroleum in the late 1970s, the
+        impact structure was formed around 66 million years ago near the end of the Cretaceous
+        period. It is widely accepted that the devastation and climate disruption from the impact
+        was the cause of the Cretaceous–Paleogene extinction event, in which around 75 percent of
+        all plant and animal species on Earth became extinct, including all non-avian dinosaurs. A
+        2021 study stated that the impactor likely originated in the outer main part of the asteroid
+        belt.</text>
+    <references>
+        <reference>
+            <type>paper</type>
+            <tag>science</tag>
+            <citation>Renne &amp; Deino &amp; Hilgen 2013 12-32</citation>
+            <note>A note about this citation.</note>
+        </reference>
+        <reference>
+            <type>paper</type>
+            <citation>Rossi 1963 108-127</citation>
+        </reference>
+        <reference>
+            <type>web</type>
+            <citation>http://wikipedia.org/wiki/Chicxulub_crater</citation>
+        </reference>
+    </references>
+    <externalIds>
+        <externalId>
+            <tag>web</tag>
+            <value>https://en.wikipedia.org/wiki/Chicxulub_crater</value>
+            <scope>wiki</scope>
+        </externalId>
+        <externalId>
+            <tag>id</tag>
+            <value>https://ima.info/12398</value>
+            <scope>myweb</scope>
+            <assertion>
+                <rank>2</rank>
+                <references>
+                    <reference>
+                        <type>book</type>
+                        <tag>art</tag>
+                        <citation>Afriz 2007</citation>
+                        <note>A note on this book.</note>
+                    </reference>
+                </references>
+                <references>
+                    <reference>
+                        <type>book</type>
+                        <tag>literature</tag>
+                        <citation>Farnell 1933</citation>
+                    </reference>
+                </references>
+                <note>That's an assertion.</note>
+            </assertion>
+        </externalId>
+    </externalIds>
+    <categories>
+        <category>history</category>
+        <category>geology</category>
+    </categories>
+    <keywords>
+        <keyword>
+            <indexId>places</indexId>
+            <note>A note about this keyword.</note>
+            <language>eng</language>
+            <value>Chicxulub</value>
+        </keyword>
+        <keyword>
+            <indexId>places</indexId>
+            <language>eng</language>
+            <value>Yucatán</value>
+        </keyword>
+    </keywords>
+</root>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <lemma>pulsosque</lemma>
+    <location>1.2</location>
+    <tag>marginal</tag>
+    <entries>
+        <type>0</type>
+        <subrange/>
+        <tag>interlinear</tag>
+        <value>pulsisque</value>
+        <normValue>pulsisque</normValue>
+        <isAccepted>true</isAccepted>
+        <groupId/>
+        <witnesses>
+            <value>B</value>
+            <note>manus altera</note>
+        </witnesses>
+        <witnesses>
+            <value>O</value>
+        </witnesses>
+        <authors>
+            <value>Cursius</value>
+            <note>(dubitanter)</note>
+        </authors>
+    </entries>
+    <entries>
+        <type>0</type>
+        <value/>
+        <witnesses>
+            <value>Q</value>
+        </witnesses>
+        <witnesses>
+            <value>Z</value>
+        </witnesses>
+    </entries>
+    <entries>
+        <type>0</type>
+        <value>pulsosque</value>
+        <normValue>pulsosque</normValue>
+        <witnesses>
+            <value>P</value>
+        </witnesses>
+        <witnesses>
+            <value>r</value>
+        </witnesses>
+        <authors>
+            <value>Serv. ad Aen. 1,2</value>
+            <note>(de ablativo casu)</note>
+        </authors>
+    </entries>
+    <entries>
+        <type>3</type>
+        <note>non liquet an lacuna postulanda sit.</note>
+    </entries>
+</root>
