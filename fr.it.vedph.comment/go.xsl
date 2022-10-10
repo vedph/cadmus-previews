@@ -158,6 +158,12 @@
                     .comment-id-n {
                         font-style: italic;
                     }
+                    .comment-id-s {
+                        border: 1px solid orange;
+                        border-radius: 4px;
+                        padding: 4px;
+                        margin: 0 4px;
+                    }
                     .comment-assertion {
                         border: 1px solid orange;
                         border-radius: 6px;
@@ -232,12 +238,16 @@
                         <ul class="comment-ids">
                             <xsl:for-each select="externalIds/externalId">
                                 <li>
-                                    <span class="comment-id-t">
-                                        <xsl:value-of select="tag"/>
-                                    </span>
-                                    <span class="comment-id-s">
-                                        <xsl:value-of select="scope"/>
-                                    </span>
+                                    <xsl:if test="tag[normalize-space(.)]">
+                                        <span class="comment-id-t">
+                                            <xsl:value-of select="tag"/>
+                                        </span>
+                                    </xsl:if>
+                                    <xsl:if test="scope[normalize-space(.)]">
+                                        <span class="comment-id-s">
+                                            <xsl:value-of select="scope"/>
+                                        </span>
+                                    </xsl:if>
                                     <span class="comment-id-v">
                                         <xsl:call-template name="build-link">
                                             <xsl:with-param name="val" select="value"/>
@@ -252,7 +262,7 @@
                                             </xsl:if>
                                             <xsl:if test="assertion/rank">
                                                 <xsl:text> </xsl:text>
-                                                <span class="comment-id-r"> R<xsl:value-of
+                                                <span class="comment-id-r">R<xsl:value-of
                                                   select="assertion/rank"/>
                                                 </span>
                                             </xsl:if>
