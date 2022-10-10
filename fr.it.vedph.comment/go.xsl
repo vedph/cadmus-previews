@@ -184,7 +184,7 @@
                     </xsl:if>
 
                     <!-- categories -->
-                    <xsl:if test="categories">
+                    <xsl:if test="categories/*">
                         <div class="pv-flex-row">
                             <xsl:for-each select="category">
                                 <div class="comment-category">
@@ -204,7 +204,7 @@
                     </xsl:if>
 
                     <!-- keywords -->
-                    <xsl:if test="keywords">
+                    <xsl:if test="keywords/*">
                         <ul class="comment-keywords">
                             <xsl:for-each select="keyword">
                                 <xsl:sort select="indexId"/>
@@ -225,7 +225,7 @@
                     </xsl:if>
 
                     <!-- references -->
-                    <xsl:if test="references">
+                    <xsl:if test="references/*">
                         <div class="comment-hdr">references</div>
                         <ol class="comment-references">
                             <xsl:apply-templates select="references/reference"/>
@@ -233,7 +233,7 @@
                     </xsl:if>
 
                     <!-- externalIds -->
-                    <xsl:if test="externalIds">
+                    <xsl:if test="externalIds/*">
                         <div class="comment-hdr">identifiers</div>
                         <ul class="comment-ids">
                             <xsl:for-each select="externalIds/externalId">
