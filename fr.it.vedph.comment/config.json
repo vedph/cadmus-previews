@@ -1,0 +1,42 @@
+{
+  "RendererFilters": [
+    {
+      "Keys": "markdown",
+      "Id": "it.vedph.renderer-filter.markdown",
+      "Options": {
+        "MarkdownOpen": "<_md>",
+        "MarkdownClose": "</_md>",
+        "Format": "html"
+      }
+    },
+    {
+      "Keys": "iso639-3",
+      "Id": "it.vedph.renderer-filter.iso639"
+    }
+  ],
+  "JsonRenderers": [
+    {
+      "Keys": "it.vedph.token-text-layer|fr.it.vedph.comment",
+      "Id": "it.vedph.json-renderer.xslt",
+      "Options": {
+        "WrappedEntryNames": {
+          "categories": "category",
+          "references": "reference",
+          "keywords": "keyword",
+          "externalIds": "externalId"
+        },
+        "Xslt": "...TODO: paste minified XSLT here...",
+        "FilterKeys": [
+          "markdown",
+          "iso639-3"
+        ]
+      }
+    }
+  ],
+  "TextPartFlatteners": [
+    {
+      "Keys": "it.vedph.token-text",
+      "Id": "it.vedph.text-flattener.token"
+    }
+  ]
+}

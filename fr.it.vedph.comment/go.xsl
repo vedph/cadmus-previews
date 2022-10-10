@@ -4,24 +4,29 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="1.0">
     <xsl:output method="html"/>
 
+    <!-- remove empty elements -->
+    <xsl:template match="*[not(*) and not(normalize-space())]"> </xsl:template>
+
+    <!-- build link -->
     <xsl:template name="build-link">
-        <xsl:param name="value"/>
+        <xsl:param name="val"/>
         <xsl:choose>
-            <xsl:when test="starts-with($value, 'http')">
+            <xsl:when test="starts-with($val, 'http')">
                 <xsl:element name="a">
                     <xsl:attribute name="href">
-                        <xsl:value-of select="$value"/>
+                        <xsl:value-of select="$val"/>
                     </xsl:attribute>
                     <xsl:attribute name="target">_blank</xsl:attribute>
-                    <xsl:value-of select="$value"/>
+                    <xsl:value-of select="$val"/>
                 </xsl:element>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:value-of select="$value"/>
+                <xsl:value-of select="$val"/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 
+    <!-- reference -->
     <xsl:template match="reference">
         <li>
             <xsl:if test="type">
@@ -37,7 +42,7 @@
             <xsl:if test="citation">
                 <span class="comment-ref-c">
                     <xsl:call-template name="build-link">
-                        <xsl:with-param name="value" select="citation"> </xsl:with-param>
+                        <xsl:with-param name="val" select="citation"> </xsl:with-param>
                     </xsl:call-template>
                 </span>
             </xsl:if>
@@ -161,8 +166,7 @@
                         background-color: #fefefe;
                     }
                     .comment-assertion-refs {
-                    }
-                </style>
+                    }</style>
             </head>
             <body>
                 <div class="comment">
@@ -236,11 +240,10 @@
                                     </span>
                                     <span class="comment-id-v">
                                         <xsl:call-template name="build-link">
-                                            <xsl:with-param name="value" select="value"
-                                            > </xsl:with-param>
+                                            <xsl:with-param name="val" select="value"/>
                                         </xsl:call-template>
                                     </span>
-                                    <xsl:if test="assertion">
+                                    <xsl:if test="assertion/*">
                                         <div class="comment-assertion">
                                             <xsl:if test="assertion/tag">
                                                 <span class="comment-id-t">
@@ -249,8 +252,8 @@
                                             </xsl:if>
                                             <xsl:if test="assertion/rank">
                                                 <xsl:text> </xsl:text>
-                                                <span class="comment-id-r">
-                                                  R<xsl:value-of select="assertion/rank"/>
+                                                <span class="comment-id-r"> R<xsl:value-of
+                                                  select="assertion/rank"/>
                                                 </span>
                                             </xsl:if>
                                             <xsl:if test="assertion/note">
