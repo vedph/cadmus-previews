@@ -107,7 +107,7 @@
                         margin: 0 4px;
                     }
                     .comment-kw-l {
-                        background-color: #f5f3e1;
+                        background-color: #bdb03e;
                         color: white;
                         border-radius: 4px;
                         padding: 4px;
@@ -207,16 +207,18 @@
                     </xsl:if>
 
                     <!-- keywords -->
-                    <xsl:if test="keywords/*">
+                    <xsl:if test="keywords/keyword">
                         <ul class="comment-keywords">
-                            <xsl:for-each select="keyword">
+                            <xsl:for-each select="keywords/keyword">
                                 <xsl:sort select="indexId"/>
                                 <xsl:sort select="language"/>
                                 <xsl:sort select="value"/>
                                 <li>
-                                    <span class="comment-kw-x">
-                                        <xsl:value-of select="indexId"/>
-                                    </span>
+                                    <xsl:if test="indexId[normalize-space(.)]">
+                                        <span class="comment-kw-x">
+                                            <xsl:value-of select="indexId"/>
+                                        </span>
+                                    </xsl:if>
                                     <span class="comment-kw-l">^^<xsl:value-of select="language"
                                         /></span>
                                     <span class="comment-kw-v">
