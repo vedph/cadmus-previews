@@ -29,12 +29,12 @@
     <!-- reference -->
     <xsl:template match="reference">
         <li>
-            <xsl:if test="type">
+            <xsl:if test="type[normalize-space(.)]">
                 <span class="comment-ref-y">
                     <xsl:value-of select="type"/>
                 </span>
             </xsl:if>
-            <xsl:if test="tag">
+            <xsl:if test="tag[normalize-space(.)]">
                 <span class="comment-ref-t">
                     <xsl:value-of select="tag"/>
                 </span>
@@ -46,7 +46,7 @@
                     </xsl:call-template>
                 </span>
             </xsl:if>
-            <xsl:if test="note">
+            <xsl:if test="note[normalize-space(.)]">
                 <xsl:text> </xsl:text>
                 <span class="comment-ref-n">
                     <xsl:value-of select="note"/>
@@ -87,11 +87,14 @@
                         column-count: 4;
                         column-width: 400px;
                     }
+                    .comment-categories {
+                        margin: 6px 0;
+                    }
                     .comment-category {
                         background-color: #afd3ff;
                         border: 1px solid #afd3ff;
-                        border-radius: 6px;
-                        padding: 6px;
+                        border-radius: 4px;
+                        padding: 4px;
                     }
                     .comment-keywords {
                         line-height: 200%;
@@ -177,16 +180,16 @@
             <body>
                 <div class="comment">
                     <!-- tag -->
-                    <xsl:if test="tag">
+                    <xsl:if test="tag[normalize-space(.)]">
                         <div class="comment-tag">
                             <xsl:value-of select="tag"/>
                         </div>
                     </xsl:if>
 
                     <!-- categories -->
-                    <xsl:if test="categories/*">
-                        <div class="pv-flex-row">
-                            <xsl:for-each select="category">
+                    <xsl:if test="categories/category">
+                        <div class="pv-flex-row comment-categories">
+                            <xsl:for-each select="categories/category">
                                 <div class="comment-category">
                                     <xsl:value-of select="."/>
                                 </div>
