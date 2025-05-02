@@ -2,7 +2,7 @@
   "RendererFilters": [
     {
       "Keys": "markdown",
-      "Id": "it.vedph.renderer-filter.markdown",
+      "Id": "it.vedph.text-filter.str.markdown",
       "Options": {
         "MarkdownOpen": "<_md>",
         "MarkdownClose": "</_md>",
@@ -11,12 +11,12 @@
     },
     {
       "Keys": "iso639-3",
-      "Id": "it.vedph.renderer-filter.iso639"
+      "Id": "it.vedph.text-filter.str.iso639"
     }
   ],
   "JsonRenderers": [
     {
-      "Keys": "it.vedph.token-text-layer|fr.it.vedph.comment",
+      "Keys": "it.vedph.token-text-layer:fr.it.vedph.comment",
       "Id": "it.vedph.json-renderer.xslt",
       "Options": {
         "WrappedEntryNames": {

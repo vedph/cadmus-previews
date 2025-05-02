@@ -64,11 +64,10 @@ To create a preview:
 
 ```json
 {
-  "RendererFilters": [
-    TODO: add your filters here, like these ones...
+  "TextFilters": [
     {
       "Keys": "markdown",
-      "Id": "it.vedph.renderer-filter.markdown",
+      "Id": "it.vedph.text-filter.str.markdown",
       "Options": {
         "MarkdownOpen": "<_md>",
         "MarkdownClose": "</_md>",
@@ -77,7 +76,7 @@ To create a preview:
     },
     {
       "Keys": "token-extractor",
-      "Id": "it.vedph.renderer-filter.mongo-token-extractor",
+      "Id": "it.vedph.text-filter.str.mongo-token-extractor",
       "Options": {
         "LocationPattern": "<location>([^<]+)</location>",
         "TextTemplate": "<span class=\"apparatus-lemma\">{text}</span>",
@@ -91,11 +90,11 @@ To create a preview:
   ],
   "JsonRenderers": [
     {
-      "Keys": "TODO: your part ID: partID or partID|fragmentID",
+      "Keys": "TODO: your part ID i.e. partID or partID:fragmentID",
       "Id": "it.vedph.json-renderer.xslt",
       "Options": {
         "FilterKeys": [
-          TODO: add your filter keys here...
+          "TODO: add your filter keys here...",
           "token-extractor"
         ],
         "Xslt": "...TODO: paste your minimized script here..."
@@ -112,3 +111,7 @@ To create a preview:
 ```
 
 >To minify your XSLT you can use any tool like [this web minifier](https://codebeautify.org/xml-minifier). Please ensure to properly escape the XSLT code when placing it in the JSON configuration: any `"` should be escaped as `\"`.
+
+## History
+
+- 2025-05-02: updated to [migration V3](https://github.com/vedph/cadmus-migration-v3).
