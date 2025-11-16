@@ -27,7 +27,7 @@ To create a preview:
     <xsl:output media-type="text/html" method="html" omit-xml-declaration="yes" encoding="UTF-8"/>
     <!-- TODO optional templates for root's descendants here... -->
     <xsl:template match="root">
-        <html>
+        <html lang="en">
             <head>
                 <style type="text/css">
                     .pv-flex-row {

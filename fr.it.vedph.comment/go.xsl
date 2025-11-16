@@ -5,7 +5,7 @@
     <xsl:output media-type="text/html" method="html" omit-xml-declaration="yes" encoding="UTF-8"/>
 
     <!-- remove empty elements -->
-    <xsl:template match="*[not(*) and not(normalize-space())]"> </xsl:template>
+    <xsl:template match="*[not(*) and not(normalize-space())]"></xsl:template>
 
     <!-- build link -->
     <xsl:template name="build-link">
@@ -42,12 +42,12 @@
             <xsl:if test="citation">
                 <span class="comment-ref-c">
                     <xsl:call-template name="build-link">
-                        <xsl:with-param name="val" select="citation"> </xsl:with-param>
+                        <xsl:with-param name="val" select="citation"></xsl:with-param>
                     </xsl:call-template>
                 </span>
             </xsl:if>
             <xsl:if test="note[normalize-space(.)]">
-                <xsl:text> </xsl:text>
+                <xsl:text></xsl:text>
                 <span class="comment-ref-n">
                     <xsl:value-of select="note"/>
                 </span>
@@ -57,8 +57,11 @@
 
     <!-- root -->
     <xsl:template match="root">
-        <html>
+        <html lang="en">
             <head>
+                <meta charset="UTF-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <title>Comment</title>
                 <style type="text/css">
                     .pv-flex-row {
                         display: flex;
@@ -219,8 +222,7 @@
                                             <xsl:value-of select="indexId"/>
                                         </span>
                                     </xsl:if>
-                                    <span class="comment-kw-l">^^<xsl:value-of select="language"
-                                        /></span>
+                                    <span class="comment-kw-l">^^<xsl:value-of select="language" /></span>
                                     <span class="comment-kw-v">
                                         <xsl:value-of select="value"/>
                                     </span>
@@ -262,25 +264,23 @@
                                         <div class="comment-assertion">
                                             <xsl:if test="assertion/tag">
                                                 <span class="comment-id-t">
-                                                  <xsl:value-of select="assertion/tag"/>
+                                                    <xsl:value-of select="assertion/tag"/>
                                                 </span>
                                             </xsl:if>
                                             <xsl:if test="assertion/rank">
-                                                <xsl:text> </xsl:text>
-                                                <span class="comment-id-r">R<xsl:value-of
-                                                  select="assertion/rank"/>
+                                                <xsl:text></xsl:text>
+                                                <span class="comment-id-r">R<xsl:value-of select="assertion/rank"/>
                                                 </span>
                                             </xsl:if>
                                             <xsl:if test="assertion/note">
-                                                <xsl:text> </xsl:text>
+                                                <xsl:text></xsl:text>
                                                 <div class="comment-id-n">
-                                                  <xsl:value-of select="assertion/note"/>
+                                                    <xsl:value-of select="assertion/note"/>
                                                 </div>
                                             </xsl:if>
                                             <xsl:if test="assertion/references">
                                                 <ol class="comment-assertion-refs">
-                                                  <xsl:apply-templates
-                                                  select="assertion/references/reference"/>
+                                                    <xsl:apply-templates select="assertion/references/reference"/>
                                                 </ol>
                                             </xsl:if>
                                         </div>
