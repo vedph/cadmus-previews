@@ -10,14 +10,22 @@ For more documentation on preview, see [Cadmus migration documentation](https://
 
 To create a preview:
 
-(1) choose the part or fragment you want to build the preview for, and create a folder named after its ID.
+▶️ (1) choose the part or fragment you want to build the preview for, and create a folder named after its type ID (e.g. `it.vedph.note`).
 
-(2) in the folder, create a `sample.xml` file to contain sample data for the chosen part or fragment (file names are just conventions, you can use whatever name you prefer). This can be copied from the JSON content of each part or layer part in the Cadmus MongoDB database, or just created by hand. In both cases, you should ensure that you adjust JSON for preview, manually performing the operations which will then be automatic in the system:
+▶️ (2) in the folder, create a `sample.xml` file to contain sample data for the chosen part or fragment (file names are just conventions, you can use whatever name you prefer). This can be copied from the JSON content of each part or layer part in the Cadmus MongoDB database, or just created by hand. In both cases, you should ensure that you adjust JSON for preview, manually performing the operations which will then be automatic in the system:
 
 - for fragment parts, pick a single fragment from the `fragments` array, and wrap it into `{ "root": {...} }`.
 - for any other parts, just wrap into `{ "root": {...} }` the JSON content.
 
-(3) in the folder, create a `go.xslt` XSLT file to generate your preview transforming `sample.xml`. The XSLT skeleton typically is as follows. Note that this template includes html and body, and CSS inside html's head, just to let you see the output of your script in a complete HTML document.
+You can get XML from JSON using the Cadmus CLI tool [get object](https://github.com/vedph/cadmus_tool?tab=readme-ov-file#get-object-command) command, e.g.:
+
+```sh
+./cadmus-tool get-obj cadmus f52c242d-0113-4496-a5cb-bf9d6b86c7fd c:/users/dfusi/desktop -g repository-provider.itinera -px
+```
+
+Here `-p`=ID refers to part rather than to item, and `-x`=convert into XML.
+
+▶️ (3) in the folder, create a `go.xslt` XSLT file to generate your preview transforming `sample.xml`. The XSLT skeleton typically is as follows. Note that this template includes html and body, and CSS inside html's head, just to let you see the output of your script in a complete HTML document.
 
 ```xslt
 <?xml version="1.0" encoding="UTF-8"?>
@@ -53,11 +61,11 @@ To create a preview:
 </xsl:stylesheet>
 ```
 
-(4) if using Oxygen, update the transform scenarios so that you apply `go.xslt` to `sample.xml`.
+▶️ (4) if using Oxygen, update the transform scenarios so that you apply `go.xslt` to `sample.xml`.
 
 >Note that these templates are built for no dependencies, so you just need a text editor to work. This implies that you will eventually have to take into account filters, but you won't see their effects. For instance, your XSLT template might output a mock `<_md>` element just to let a Markdown filter replace it with the conversion of its content into HTML; yet, if using only simple XSLT transforms you will just see the mock element.
 
-(5) once you have completed the script, you should remove `head`, move the styles into your Cadmus app CSS, and unwrap the contents of `html` and `body`. In the end, the preview script should just generate an HTML fragment, usually rooted under some element like `div`. To add your preview:
+▶️ (5) once you have completed the script, you should remove `head`, move the styles into your Cadmus app CSS, and unwrap the contents of `html` and `body`. In the end, the preview script should just generate an HTML fragment, usually rooted under some element like `div`. To add your preview:
 
 - in the app frontend, just add your styles to `preview-styles.css`.
 - in the API backend, add your preview configuration to `preview-profile.json`. Here you should have all the filters used by your renderers, and a JSON renderer for each preview type. For instance:
