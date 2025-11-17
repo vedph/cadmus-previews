@@ -6,6 +6,11 @@ set docdir=\Projects\Cadmus\cadmus-previews\fr.it.vedph.apparatus\
 %xu% transform %docdir%fr.xml %docdir% %docdir%fr.xsl -f html
 pause
 
+echo CHRONOLOGY FRAGMENT
+set docdir=\Projects\Cadmus\cadmus-previews\fr.it.vedph.chronology\
+%xu% transform %docdir%fr.xml %docdir% %docdir%fr.xsl -f html
+pause
+
 echo COMMENT FRAGMENT
 set docdir=\Projects\Cadmus\cadmus-previews\fr.it.vedph.comment\
 %xu% transform %docdir%fr.xml %docdir% %docdir%fr.xsl -f html

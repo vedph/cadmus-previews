@@ -1,12 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Cadmus preview - fr.it.veph.chronology -->
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="1.0">
-    <xsl:output media-type="text/html" method="html" omit-xml-declaration="yes" encoding="UTF-8"/>
-    <!-- remove WS-only text nodes -->
-    <xsl:strip-space elements="*"/>
-
-    <!-- copied from functions/historical-date.xsl-->
     <xsl:template name="render-date">
         <xsl:param name="date"/>
 
@@ -264,52 +255,3 @@
             </xsl:when>
         </xsl:choose>
     </xsl:template>
-
-    <!-- root -->
-    <xsl:template match="root">
-        <html lang="en">
-            <head>
-                <meta charset="UTF-8"/>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                <title>Chronology Fragment</title>
-                <style type="text/css">
-                    .pv-chronology {
-                        font-family: Arial, sans-serif;
-                        font-size: 14px;
-                        margin: 10px;
-                    }
-                    .pv-fr-label {
-                        font-weight: bold;
-                    }
-                    .pv-date {
-                        color: #555555;
-                    }
-                </style>
-            </head>
-            <body>
-                <div class="pv-chronology">
-                    <xsl:element name="span">
-                        <xsl:attribute name="pv-fr-text">
-                            <xsl:text>@{</xsl:text>
-                            <xsl:value-of select="location"/>
-                            <xsl:text>}</xsl:text>
-                        </xsl:attribute>
-                    </xsl:element>
-                    <xsl:if test="label">
-                        <xsl:text> </xsl:text>
-                        <span class="pv-fr-label">
-                            <xsl:value-of select="label"/>
-                        </span>
-                    </xsl:if>
-                    <span class="pv-date">
-                        <xsl:text>: </xsl:text>
-                        <xsl:call-template name="render-date">
-                            <xsl:with-param name="date" select="date"/>
-                        </xsl:call-template>
-                    </span>
-                </div>
-            </body>
-        </html>
-    </xsl:template>
-
-</xsl:stylesheet>
