@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <location>1.1-1.2</location>
+  <tag>cos</tag>
+  <label>consulatus of Cicero</label>
+  <eventId>cos.cicero</eventId>
+  <date>
+    <a>
+      <value>-63</value>
+    </a>
+  </date>
+</root>

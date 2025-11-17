@@ -17,6 +17,7 @@
                         <xsl:value-of select="$val"/>
                     </xsl:attribute>
                     <xsl:attribute name="target">_blank</xsl:attribute>
+                    <xsl:attribute name="rel">noopener noreferrer</xsl:attribute>
                     <xsl:value-of select="$val"/>
                 </xsl:element>
             </xsl:when>
@@ -30,17 +31,17 @@
     <xsl:template match="reference">
         <li>
             <xsl:if test="type[normalize-space(.)]">
-                <span class="comment-ref-y">
+                <span class="pv-comment-ref-y">
                     <xsl:value-of select="type"/>
                 </span>
             </xsl:if>
             <xsl:if test="tag[normalize-space(.)]">
-                <span class="comment-ref-t">
+                <span class="pv-comment-ref-t">
                     <xsl:value-of select="tag"/>
                 </span>
             </xsl:if>
             <xsl:if test="citation">
-                <span class="comment-ref-c">
+                <span class="pv-comment-ref-c">
                     <xsl:call-template name="build-link">
                         <xsl:with-param name="val" select="citation"></xsl:with-param>
                     </xsl:call-template>
@@ -48,7 +49,7 @@
             </xsl:if>
             <xsl:if test="note[normalize-space(.)]">
                 <xsl:text></xsl:text>
-                <span class="comment-ref-n">
+                <span class="pv-comment-ref-n">
                     <xsl:value-of select="note"/>
                 </span>
             </xsl:if>
@@ -72,119 +73,119 @@
                     .pv-flex-row * {
                         flex: 0 0 auto;
                     }
-                    .comment a {
+                    .pv-comment a {
                         text-decoration: none;
                     }
-                    .comment a:hover {
+                    .pv-comment a:hover {
                         text-decoration: underline;
                     }
-                    .comment-tag {
+                    .pv-comment-tag {
                         color: silver;
                         font-weight: bold;
                         padding: 6px;
                         border: 1px solid silver;
                         border-radius: 6px;
                     }
-                    .comment-text {
+                    .pv-comment-text {
                         margin: 8px;
                         column-count: 4;
                         column-width: 400px;
                     }
-                    .comment-categories {
+                    .pv-comment-categories {
                         margin: 6px 0;
                     }
-                    .comment-category {
+                    .pv-comment-category {
                         background-color: #afd3ff;
                         border: 1px solid #afd3ff;
                         border-radius: 4px;
                         padding: 4px;
                     }
-                    .comment-keywords {
+                    .pv-comment-keywords {
                         line-height: 200%;
                     }
-                    .comment-kw-x {
+                    .pv-comment-kw-x {
                         background-color: #34eb98;
                         color: white;
                         border-radius: 4px;
                         padding: 4px;
                         margin: 0 4px;
                     }
-                    .comment-kw-l {
+                    .pv-comment-kw-l {
                         background-color: #bdb03e;
                         color: white;
                         border-radius: 4px;
                         padding: 4px;
                         margin: 0 4px;
                     }
-                    .comment-kw-v {
+                    .pv-comment-kw-v {
                         color: #827609;
                     }
-                    .comment-hdr {
+                    .pv-comment-hdr {
                         color: royalblue;
                         border-bottom: 1px solid royalblue;
                         margin: 8px 0;
                         font-variant: small-caps;
                     }
-                    .comment-references {
+                    .pv-comment-references {
                         line-height: 200%;
                     }
-                    .comment-ref-y {
+                    .pv-comment-ref-y {
                         background-color: #35c6ea;
                         color: white;
                         border-radius: 4px;
                         padding: 4px;
                         margin: 0 4px;
                     }
-                    .comment-ref-t {
+                    .pv-comment-ref-t {
                         background-color: #34eb98;
                         color: white;
                         border-radius: 4px;
                         padding: 4px;
                         margin: 0 4px;
                     }
-                    .comment-ref-c {
+                    .pv-comment-ref-c {
                     }
-                    .comment-ref-n {
+                    .pv-comment-ref-n {
                         font-style: italic;
                     }
-                    .comment-ids {
+                    .pv-comment-ids {
                         line-height: 200%;
                     }
-                    .comment-id-t {
+                    .pv-comment-id-t {
                         background-color: #34eb98;
                         color: white;
                         border-radius: 4px;
                         padding: 4px;
                         margin: 0 4px;
                     }
-                    .comment-id-r {
+                    .pv-comment-id-r {
                         font-weight: bold;
                         color: orange;
                     }
-                    .comment-id-n {
+                    .pv-comment-id-n {
                         font-style: italic;
                     }
-                    .comment-id-s {
+                    .pv-comment-id-s {
                         border: 1px solid orange;
                         border-radius: 4px;
                         padding: 4px;
                         margin: 0 4px;
                     }
-                    .comment-assertion {
+                    .pv-comment-assertion {
                         border: 1px solid orange;
                         border-radius: 6px;
                         padding: 6px;
                         margin: 4px;
                         background-color: #fefefe;
                     }
-                    .comment-assertion-refs {
+                    .pv-comment-assertion-refs {
                     }</style>
             </head>
             <body>
-                <div class="comment">
+                <div class="pv-comment">
                     <!-- tag -->
                     <xsl:if test="tag[normalize-space(.)]">
-                        <div class="comment-tag">
+                        <div class="pv-comment-tag">
                             <xsl:value-of select="tag"/>
                         </div>
                     </xsl:if>
@@ -193,7 +194,7 @@
                     <xsl:if test="categories/category">
                         <div class="pv-flex-row comment-categories">
                             <xsl:for-each select="categories/category">
-                                <div class="comment-category">
+                                <div class="pv-comment-category">
                                     <xsl:value-of select="."/>
                                 </div>
                             </xsl:for-each>
@@ -202,7 +203,7 @@
 
                     <!-- text -->
                     <xsl:if test="text">
-                        <div class="comment-text">
+                        <div class="pv-comment-text">
                             <_md>
                                 <xsl:value-of select="text"/>
                             </_md>
@@ -211,19 +212,19 @@
 
                     <!-- keywords -->
                     <xsl:if test="keywords/keyword">
-                        <ul class="comment-keywords">
+                        <ul class="pv-comment-keywords">
                             <xsl:for-each select="keywords/keyword">
                                 <xsl:sort select="indexId"/>
                                 <xsl:sort select="language"/>
                                 <xsl:sort select="value"/>
                                 <li>
                                     <xsl:if test="indexId[normalize-space(.)]">
-                                        <span class="comment-kw-x">
+                                        <span class="pv-comment-kw-x">
                                             <xsl:value-of select="indexId"/>
                                         </span>
                                     </xsl:if>
-                                    <span class="comment-kw-l">^^<xsl:value-of select="language" /></span>
-                                    <span class="comment-kw-v">
+                                    <span class="pv-comment-kw-l">^^<xsl:value-of select="language" /></span>
+                                    <span class="pv-comment-kw-v">
                                         <xsl:value-of select="value"/>
                                     </span>
                                 </li>
@@ -233,53 +234,53 @@
 
                     <!-- references -->
                     <xsl:if test="references/*">
-                        <div class="comment-hdr">references</div>
-                        <ol class="comment-references">
+                        <div class="pv-comment-hdr">references</div>
+                        <ol class="pv-comment-references">
                             <xsl:apply-templates select="references/reference"/>
                         </ol>
                     </xsl:if>
 
                     <!-- externalIds -->
                     <xsl:if test="externalIds/*">
-                        <div class="comment-hdr">identifiers</div>
-                        <ul class="comment-ids">
+                        <div class="pv-comment-hdr">identifiers</div>
+                        <ul class="pv-comment-ids">
                             <xsl:for-each select="externalIds/externalId">
                                 <li>
                                     <xsl:if test="tag[normalize-space(.)]">
-                                        <span class="comment-id-t">
+                                        <span class="pv-comment-id-t">
                                             <xsl:value-of select="tag"/>
                                         </span>
                                     </xsl:if>
                                     <xsl:if test="scope[normalize-space(.)]">
-                                        <span class="comment-id-s">
+                                        <span class="pv-comment-id-s">
                                             <xsl:value-of select="scope"/>
                                         </span>
                                     </xsl:if>
-                                    <span class="comment-id-v">
+                                    <span class="pv-comment-id-v">
                                         <xsl:call-template name="build-link">
                                             <xsl:with-param name="val" select="value"/>
                                         </xsl:call-template>
                                     </span>
                                     <xsl:if test="assertion/*">
-                                        <div class="comment-assertion">
+                                        <div class="pv-comment-assertion">
                                             <xsl:if test="assertion/tag">
-                                                <span class="comment-id-t">
+                                                <span class="pv-comment-id-t">
                                                     <xsl:value-of select="assertion/tag"/>
                                                 </span>
                                             </xsl:if>
                                             <xsl:if test="assertion/rank">
                                                 <xsl:text></xsl:text>
-                                                <span class="comment-id-r">R<xsl:value-of select="assertion/rank"/>
+                                                <span class="pv-comment-id-r">R<xsl:value-of select="assertion/rank"/>
                                                 </span>
                                             </xsl:if>
                                             <xsl:if test="assertion/note">
                                                 <xsl:text></xsl:text>
-                                                <div class="comment-id-n">
+                                                <div class="pv-comment-id-n">
                                                     <xsl:value-of select="assertion/note"/>
                                                 </div>
                                             </xsl:if>
                                             <xsl:if test="assertion/references">
-                                                <ol class="comment-assertion-refs">
+                                                <ol class="pv-comment-assertion-refs">
                                                     <xsl:apply-templates select="assertion/references/reference"/>
                                                 </ol>
                                             </xsl:if>

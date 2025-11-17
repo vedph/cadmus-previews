@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <fragments>
+    <fragment>
+      <location>1.1-1.2</location>
+      <tag>cos</tag>
+      <label>consulatus of Cicero</label>
+      <eventId>cos.cicero</eventId>
+      <date>
+        <a>
+          <value>-63</value>
+        </a>
+      </date>
+    </fragment>
+    <fragment>
+      <location>2.1-2.3</location>
+      <tag>prst</tag>
+      <label>battle of Actium</label>
+      <eventId>battle.actium</eventId>
+      <date>
+        <a>
+          <value>-31</value>
+        </a>
+      </date>
+    </fragment>
+  </fragments>
+  <id>f52c242d-0113-4496-a5cb-bf9d6b86c7fd</id>
+  <itemId>7b92e554-cc74-46e0-bae6-308bb6d69b25</itemId>
+  <typeId>it.vedph.tiled-text-layer</typeId>
+  <roleId>fr.it.vedph.chronology</roleId>
+  <timeCreated>2025-11-02T12:14:42.0005288Z</timeCreated>
+  <creatorId>zeus</creatorId>
+  <timeModified>2025-11-02T12:14:42.0460805Z</timeModified>
+  <userId>zeus</userId>
+</root>

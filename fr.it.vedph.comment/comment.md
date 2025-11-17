@@ -1,3 +1,15 @@
+# Comment Fragment
+
+- 🔑 single fragment: [it.vedph.token-text-layer:fr.it.vedph.comment](fr.xsl)
+- 🔑 all fragments: `it.vedph.token-text-layer::fr.it.vedph.comment`
+
+## Configuration
+
+- filters:
+  - Markdown, to render the comment body.
+  - ISO639 or BCP47 (pick the one you use, remove the other) to render language codes from keywords.
+
+```json
 {
   "RendererFilters": [
     {
@@ -12,6 +24,10 @@
     {
       "Keys": "iso639-3",
       "Id": "it.vedph.text-filter.str.iso639"
+    },
+    {
+      "Keys": "bcp47",
+      "Id": "it.vedph.text-filter.str.bcp47"
     }
   ],
   "JsonRenderers": [
@@ -28,7 +44,7 @@
         "Xslt": "...TODO: paste minified XSLT here...",
         "FilterKeys": [
           "markdown",
-          "iso639-3"
+          "bcp47"
         ]
       }
     }
@@ -40,3 +56,4 @@
     }
   ]
 }
+```

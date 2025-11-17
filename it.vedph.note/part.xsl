@@ -8,7 +8,7 @@
         </div>
     </xsl:template>
     <xsl:template match="text">
-        <div class="note-text">
+        <div class="pv-note-text">
             <_md>
                 <xsl:value-of select="."/>
             </_md>

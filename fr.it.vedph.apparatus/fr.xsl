@@ -98,19 +98,19 @@
             <head>
                 <meta charset="UTF-8"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                <title>Apparatus</title>
+                <title>Apparatus Fragment</title>
                 <style type="text/css">
-                    .apparatus-lemma { padding: 2px 4px; border: 1px solid silver; border-radius: 4px; margin-right: 4px; color: #065e1d; }
-                    .apparatus-w-value { font-weight:bold; }
-                    .apparatus-w-note { font-style: italic;  }
-                    .apparatus-a-value { font-style: italic;  }
-                    .apparatus-a-note { font-style: italic;  }
-                    .apparatus-sep { margin-left: 0.75em; }
-                    .apparatus-tag { font-style: italic; }
-                    .apparatus-subrange { color: silver; }
-                    .apparatus-value { color: #b8690f; }
-                    .apparatus-type { font-style: italic;  }
-                    .apparatus-note { font-style: italic;  }
+                    .pv-apparatus-lemma { padding: 2px 4px; border: 1px solid silver; border-radius: 4px; margin-right: 4px; color: #065e1d; }
+                    .pv-apparatus-w-value { font-weight:bold; }
+                    .pv-apparatus-w-note { font-style: italic;  }
+                    .pv-apparatus-a-value { font-style: italic;  }
+                    .pv-apparatus-a-note { font-style: italic;  }
+                    .pv-apparatus-sep { margin-left: 0.75em; }
+                    .pv-apparatus-tag { font-style: italic; }
+                    .pv-apparatus-subrange { color: silver; }
+                    .pv-apparatus-value { color: #b8690f; }
+                    .pv-apparatus-type { font-style: italic;  }
+                    .pv-apparatus-note { font-style: italic;  }
                 </style>
             </head>
             <body>
