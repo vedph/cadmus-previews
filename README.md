@@ -98,7 +98,7 @@ Here `-p`=ID refers to part rather than to item, and `-x`=convert into XML.
   ],
   "JsonRenderers": [
     {
-      "Keys": "TODO: your part ID i.e. partID or partID:fragmentID",
+      "Keys": "TODO: your part ID i.e. partID or partID:fragmentID or partID::fragmentID",
       "Id": "it.vedph.json-renderer.xslt",
       "Options": {
         "FilterKeys": [
@@ -117,6 +117,11 @@ Here `-p`=ID refers to part rather than to item, and `-x`=convert into XML.
   ]
 }
 ```
+
+Keys for renderers are defined as follows:
+
+- for a non-fragment part, just use the part ID.
+- for a fragment part, use the part ID plus `:` plus the fragment ID for a single fragment; use `::` for the whole part (all the fragments). This is because the UI can render both a single fragment in an interactive view, and the whole part.
 
 >To minify your XSLT you can use any tool like [this web minifier](https://codebeautify.org/xml-minifier). Please ensure to properly escape the XSLT code when placing it in the JSON configuration: any `"` should be escaped as `\"`.
 
